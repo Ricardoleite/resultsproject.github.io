@@ -1,0 +1,11 @@
+Examples
+========
+
+.. toctree::
+   :maxdepth: 4
+
+   /notebooks/PermInt
+   main2
+   module3
+   module4
+   utils2
