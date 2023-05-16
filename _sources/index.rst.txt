@@ -11,8 +11,6 @@ LBPM-Documentation
    :caption: Contents:
 
    /notebooks/PermInt
-   Bench
-   Examples
 
 Indices and tables
 ==================
