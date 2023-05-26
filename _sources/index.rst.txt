@@ -11,6 +11,7 @@ LBPM-Documentation
    :caption: Contents:
 
    /notebooks/PermInt
+   /notebooks/DigitalRocksK
 
 Indices and tables
 ==================

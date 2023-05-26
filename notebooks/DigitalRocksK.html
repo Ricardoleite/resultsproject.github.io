@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Micromodels &mdash; LBPM-Documentation 1.0.0 documentation</title>
+  <title>3D Digital Rocks &mdash; LBPM-Documentation 1.0.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -22,8 +22,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3D Digital Rocks" href="DigitalRocksK.html" />
-    <link rel="prev" title="LBPM-Documentation" href="../index.html" /> 
+    <link rel="prev" title="Micromodels" href="PermInt.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,7 +46,8 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Micromodels</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="PermInt.html">Micromodels</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3D Digital Rocks</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#Intrinsic-Permeability---Numerical-Setup">Intrinsic Permeability - Numerical Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#Resultados">Resultados</a></li>
 </ul>
@@ -55,7 +55,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#Relative-Permeability---Numerical-Setup">Relative Permeability - Numerical Setup</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="DigitalRocksK.html">3D Digital Rocks</a></li>
 </ul>
 
         </div>
@@ -72,9 +71,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Micromodels</li>
+      <li class="breadcrumb-item active">3D Digital Rocks</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/notebooks/PermInt.ipynb.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/notebooks/DigitalRocksK.ipynb.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -82,40 +81,37 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="Micromodels">
-<h1>Micromodels<a class="headerlink" href="#Micromodels" title="Permalink to this heading"></a></h1>
-<p>In porous media experimentation, advances in micromodel generation make it possible to represent different rock behavior with micro and macro porosities. However, due to their manufacturing characteristics, micromodels allow only two-dimensional approximations of the pore and connectivity behaviors present in the rock structure.</p>
-<p>In the present Section 4 verification cases for intrinsic permeability of micromodels are simulated using the LBPM (<a class="reference external" href="https://opm-project.org/">https://opm-project.org/</a>) routine lbpm_permeability_simulator. The cases M1, M2, M3 e M4 were simulated and compared with the experimental results of Wolf et al. (2022) (<a class="reference external" href="https://doi.org/10.1039/D2LC00445C">https://doi.org/10.1039/D2LC00445C</a>). All micromodels have square dimensions of 25 x 25 mm and approximate depths of 31(0.5) <span class="math notranslate nohighlight">\(\mu\)</span>m, 34.8(0.9) <span class="math notranslate nohighlight">\(\mu\)</span>m, 33.6(0.5) <span class="math notranslate nohighlight">\(\mu\)</span>m, and 32.0(2.9)
-<span class="math notranslate nohighlight">\(\mu\)</span>m for models M1, M2, M3 and M4, respectively.</p>
+  <section id="3D-Digital-Rocks">
+<h1>3D Digital Rocks<a class="headerlink" href="#3D-Digital-Rocks" title="Permalink to this heading"></a></h1>
+<p>The generation of digital rocks through x-ray microtomography imaging has revolutionized the process of characterizing permo-porous properties. As example, the 3D images obtained provides valuable insights into the complex pore network, grain arrangement, properties of fluid flow trough numerical simulations and a overall rock morphology.</p>
+<p>In the present section, the 3D images of Berea sandstone and sandpack LV60A are simulate to validate the single and multiphase routines of LBPM software for values of intrinsic and relative permeability. The results obtainer are compared with the results of Michels et al. (2021) (<a class="reference external" href="https://doi.org/10.1016/j.petrol.2021.108918">https://doi.org/10.1016/j.petrol.2021.108918</a>). The below image ilustrate the 3D images:</p>
 <ul class="simple">
-<li><p>Micromodel 1 (M1): macro pore scale with pore diameter ranging from 200 to 500 <span class="math notranslate nohighlight">\(\mu\)</span>m;</p></li>
-<li><p>Micromodel 2 (M2): dual pore scale version of M1 with porous grains of pore diameter ranging from 20 to 50 <span class="math notranslate nohighlight">\(\mu\)</span>m;</p></li>
-<li><p>Micromodel 3 (M3): dual pore scale version of M1 with porous grains and porous throats, both with pore diameter ranging from 20 to 50 <span class="math notranslate nohighlight">\(\mu\)</span>m;</p></li>
-<li><p>Micromodel 4 (M4): dual pore scale version of M1 with voids and porous throats of pore diameter ranging from 20 to 50 <span class="math notranslate nohighlight">\(\mu\)</span>m.</p></li>
+<li><ol class="loweralpha simple">
+<li><p>Berea sandstone (<a class="reference external" href="https://figshare.com/articles/dataset/Berea_Sandstone/1153794/2">https://figshare.com/articles/dataset/Berea_Sandstone/1153794/2</a>);</p></li>
+</ol>
+</li>
+<li><ol class="loweralpha simple" start="2">
+<li><p>Sandpack LV60A (<a class="reference external" href="https://figshare.com/articles/dataset/LV60A_sandpack/1153795/2">https://figshare.com/articles/dataset/LV60A_sandpack/1153795/2</a>).</p></li>
+</ol>
+</li>
 </ul>
-<table><thead><tr><th style="font-size:19px;text-align: center"><p>M1</p>
-</th><th style="font-size:19px;text-align: center"><p>M2</p>
-</th><th style="font-size:19px;text-align: center"><p>M3</p>
-</th><th style="font-size:19px;text-align: center"><p>M4</p>
-</th></tr></thead><tbody><tr><td><p><img alt="4c2a89663a874fd693ff1fa44474294d" class="no-scaled-link" src="../_images/M1-P.png" style="width: 200px; height: 200px;" /></p>
-</td><td><p><img alt="ce72561e70b0420b879a944e461b6436" class="no-scaled-link" src="../_images/M2-P.png" style="width: 200px; height: 200px;" /></p>
-</td><td><p><img alt="4cc28203094b4e95be53e9a68baa421e" class="no-scaled-link" src="../_images/M3-P.png" style="width: 200px; height: 200px;" /></p>
-</td><td><p><img alt="ab3ef502bfe74a839b5c526dca9d61bd" class="no-scaled-link" src="../_images/M4-P.png" style="width: 200px; height: 200px;" /></p>
-</td></tr></tbody></table><section id="Intrinsic-Permeability---Numerical-Setup">
+<p><img alt="abefb544799d414d9dfd2647f02197c7" class="no-scaled-link" src="../_images/Berea-LV60A.png" style="width: 700px; height: 350px;" /></p>
+<section id="Intrinsic-Permeability---Numerical-Setup">
 <h2>Intrinsic Permeability - Numerical Setup<a class="headerlink" href="#Intrinsic-Permeability---Numerical-Setup" title="Permalink to this heading"></a></h2>
-<p>In the micromodels discrete representation are used the meshes described in the Table. At the first and last mesh points of the y and z axes are set as solid to represent the micromodel walls.</p>
+<p>The digital rocks domain used in the simulations are given in the Table below for each case.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}[]
-\begin{array}{ccc}
+\begin{array}{ccccc}
 \hline
-\textrm{Model} &amp; \textrm{Voxel size} (\mu m) &amp; \textrm{Grid } (x,y,z) &amp; \phi_{dig}[\%]  \\ \hline
-M1 &amp; 4.42 &amp; 5646 \times 5648 \times 9 &amp; 27.3     \\
-M2 &amp; 5.00 &amp; 5000 \times 5002 \times 9 &amp; 40.2     \\
-M3 &amp; 4.86 &amp; 5148 \times 5150 \times 9 &amp; 33.6     \\
-M4 &amp; 4.57 &amp; 5468 \times 5470 \times 9 &amp; 36.7     \\ \hline
+\textrm{Parameters} &amp;  &amp;  &amp; \textrm{Berea}     &amp; \textrm{LV60A}     \\ \hline
+\textrm{Physical size } (\mu m)             &amp;  &amp;  &amp; 1603.5    &amp; 3000.6    \\
+\textrm{Image size (pixels)}            &amp;  &amp;  &amp; 300^{3} &amp; 300^{3} \\
+\textrm{Voxel size } (\mu m)                &amp;  &amp;  &amp; 5.345     &amp; 10.002\\
+\textrm{Porosity} (\%)                  &amp;  &amp;  &amp; 19.8      &amp; 36.8      \\
+\textrm{Intrinsic Permeability (Darcy)} &amp;  &amp;  &amp; 1.55      &amp; 36.58     \\ \hline
 \end{array}
 \end{aligned}\end{split}\]</div>
-<p>The LBPM setup, using as example the M1 model, is given by</p>
+<p>The LBPM setup, using as example the Berea sandstone, is given by</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">MRT</span><span class="w"> </span><span class="p">{</span>
 <span class="w">   </span><span class="n">tau</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span>
 <span class="w">   </span><span class="n">F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0e-4</span>
@@ -123,15 +119,15 @@ M4 &amp; 4.57 &amp; 5468 \times 5470 \times 9 &amp; 36.7     \\ \hline
 <span class="w">   </span><span class="n">tolerance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.001</span>
 <span class="p">}</span>
 <span class="n">Domain</span><span class="w"> </span><span class="p">{</span>
-<span class="w">   </span><span class="n">Filename</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;M1-Micro-5646x5648x9.raw&quot;</span>
+<span class="w">   </span><span class="n">Filename</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Berea.raw&quot;</span>
 <span class="w">   </span><span class="n">ReadType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;8bit&quot;</span><span class="w">      </span><span class="c1">// data type</span>
-<span class="w">   </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">5648</span><span class="p">,</span><span class="w"> </span><span class="mi">5646</span><span class="w">     </span><span class="c1">// size of original image</span>
-<span class="w">   </span><span class="n">nproc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w">        </span><span class="c1">// process grid</span>
-<span class="w">   </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">1412</span><span class="p">,</span><span class="w"> </span><span class="mi">2823</span><span class="w">      </span><span class="c1">// sub-domain size</span>
+<span class="w">   </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="mi">400</span><span class="w">     </span><span class="c1">// size of original image</span>
+<span class="w">   </span><span class="n">nproc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w">        </span><span class="c1">// process grid</span>
+<span class="w">   </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="w">      </span><span class="c1">// sub-domain size</span>
 <span class="w">   </span><span class="n">offset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="c1">// offset to read sub-domain</span>
-<span class="w">   </span><span class="n">voxel_length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4.42</span><span class="w">    </span><span class="c1">// voxel length (in microns)</span>
+<span class="w">   </span><span class="n">voxel_length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5.345</span><span class="w">    </span><span class="c1">// voxel length (in microns)</span>
 <span class="w">   </span><span class="n">ReadValues</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w">   </span><span class="c1">// labels within the original image</span>
-<span class="w">   </span><span class="n">WriteValues</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w">  </span><span class="c1">// associated labels to be used by LBPM</span>
+<span class="w">   </span><span class="n">WriteValues</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w">  </span><span class="c1">// associated labels to be used by LBPM</span>
 <span class="w">   </span><span class="n">InletLayers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="c1">// specify 10 layers along the z-inlet</span>
 <span class="w">   </span><span class="n">OutletLayers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="c1">// specify 10 layers along the z-inlet</span>
 <span class="w">   </span><span class="n">BC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w">                 </span><span class="c1">// boundary condition type (0 for periodic)</span>
@@ -145,28 +141,23 @@ M4 &amp; 4.57 &amp; 5468 \times 5470 \times 9 &amp; 36.7     \\ \hline
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The domain set of ” InletLayers = 0, 0, 5” and “OutletLayers = 0, 0, 5” are used to conect inlet and outlet fo the periodic domain. The discrete images *.raw (as example “M1-Micro-5646x5648x9.raw”) are available at XX.</p>
+<p>In all cases, the domain set of ” InletLayers = 0, 0, 5” and “OutletLayers = 0, 0, 5” are used to conect inlet and outlet fo the periodic domain.</p>
 <section id="Resultados">
 <h3>Resultados<a class="headerlink" href="#Resultados" title="Permalink to this heading"></a></h3>
-<p>The velocity magnitude field obtained for each case can be seen in the Figure below.</p>
-<table><thead><tr><th style="font-size:21px;text-align: center"><p>M1</p>
-</th><th style="font-size:21px;text-align: center"><p>M2</p>
-</th><th style="font-size:21px;text-align: center"><p>M3</p>
-</th><th style="font-size:21px;text-align: center"><p>M4</p>
-</th></tr></thead><tbody><tr><td><p><img alt="d8370577054247299ef699b08e141ebe" class="no-scaled-link" src="../_images/M1-R.png" style="width: 200px; height: 200px;" /></p>
-</td><td><p><img alt="c79145317fd64106a3b2a903dd51bde2" class="no-scaled-link" src="../_images/M2-R.png" style="width: 200px; height: 200px;" /></p>
-</td><td><p><img alt="5866b04c02074075b6b0f7c9d928149b" class="no-scaled-link" src="../_images/M3-R.png" style="width: 200px; height: 200px;" /></p>
-</td><td><p><img alt="a2a0314533384f0aa27303e019a77686" class="no-scaled-link" src="../_images/M4-R.png" style="width: 200px; height: 200px;" /></p>
-</td></tr></tbody></table><h3 style="font-size:12px;text-align: center"><p>Table -Porosity and permeability calculations for the analyzed micromodels.</p>
+<p>The stream lines obtained for each case are shown in the Figure below.</p>
+<table><thead><tr><td><table><thead><tr><th style="font-size:21px;text-align: center"><p>Berea Sandstone</p>
+</th></tr></thead><tbody><tr><td><p><img alt="4c6f111d6ebc4049aa8179b5d7318a7f" class="no-scaled-link" src="../_images/Berea-Stream.png" style="width: 400px; height: 325px;" /></p>
+</td></tr></tbody></table></td><td></td><td></td><td></td><td><table><thead><tr><th style="font-size:21px;text-align: center"><p>Sandpack LV60A</p>
+</th></tr></thead><tbody><tr><td><p><img alt="96f382f7cc414ac2a758c9e1348470a0" class="no-scaled-link" src="../_images/LV60A-Stream.png" style="width: 400px; height: 325px;" /></p>
+</td></tr></tbody></table></td></tr></thead></table><h3 style="font-size:12px;text-align: center"><p>Table -Permeability comparison with Michels et al. (2021).</p>
 </h3><div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}[]
-\begin{array}{cccccccc}
+\begin{array}{cccc}
 \hline
-Model &amp; \phi_{dig}[\%] &amp; \phi_{exp}[\%] &amp; Error[\%] &amp; k[Darcy]  &amp; k_{LBPM}[Darcy] &amp; Error[\%] &amp; k^{*}_{LBPM}[Darcy] \\ \hline
-M1    &amp; 27.3      &amp; 27.2(0.1)      &amp; −0.1      &amp; 8.91(0.03)  &amp;    9.49    &amp;     6.51 &amp;   2.56   \\
-M2    &amp; 40.2      &amp; 39.7(0.2)      &amp; −1.2      &amp; 13.24(0.44) &amp;   16.56    &amp;    25.05 &amp;   6.65 \\
-M3    &amp; 33.6      &amp; 34.7(0.3)      &amp; 3.4       &amp; 5.74(0.01)  &amp;    7.26    &amp;    26.57 &amp;   2.43  \\
-M4    &amp; 36.7      &amp; 36.4(0.2)      &amp; −0.7      &amp; 5.71(1.25)  &amp;    4.41    &amp;    22.73 &amp;   1.59 \\ \hline
+ &amp; (\textrm{Michels et al. 2021})  &amp; \textrm{LBPM} &amp;  \\ \hline
+\textrm{Model} &amp; k[Darcy]  &amp; k[Darcy] &amp; Error[\%]  \\ \hline
+\textrm{Berea Sandstone}  &amp; 1.55  &amp;    1.95    &amp;     25.81    \\
+\textrm{LV60A Sandpack}   &amp; 36.58  &amp;    38.84    &amp;    6.17  \\ \hline
 \end{array}
 \end{aligned}\end{split}\]</div>
 </section>
@@ -180,8 +171,7 @@ M4    &amp; 36.7      &amp; 36.4(0.2)      &amp; −0.7      &amp; 5.71(1.25)  &
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../index.html" class="btn btn-neutral float-left" title="LBPM-Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="DigitalRocksK.html" class="btn btn-neutral float-right" title="3D Digital Rocks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="PermInt.html" class="btn btn-neutral float-left" title="Micromodels" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
