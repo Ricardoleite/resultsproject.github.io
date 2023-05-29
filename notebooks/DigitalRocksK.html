@@ -7,12 +7,11 @@
   <title>3D Digital Rocks &mdash; LBPM-Documentation 1.0.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/sphinx_rtd_size.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
@@ -22,6 +21,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Code Structure" href="../note-CodeStruc/Perm-CodeStruc.html" />
     <link rel="prev" title="Micromodels" href="PermInt.html" /> 
 </head>
 
@@ -44,7 +44,7 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Benchmarks:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="PermInt.html">Micromodels</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">3D Digital Rocks</a><ul>
@@ -55,6 +55,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#Relative-Permeability---Numerical-Setup">Relative Permeability - Numerical Setup</a></li>
 </ul>
 </li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Code Structure:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../note-CodeStruc/Perm-CodeStruc.html">Code Structure</a></li>
 </ul>
 
         </div>
@@ -82,7 +86,7 @@
            <div itemprop="articleBody">
              
   <section id="3D-Digital-Rocks">
-<h1>3D Digital Rocks<a class="headerlink" href="#3D-Digital-Rocks" title="Permalink to this heading"></a></h1>
+<h1>3D Digital Rocks<a class="headerlink" href="#3D-Digital-Rocks" title="Permalink to this heading">¶</a></h1>
 <p>The generation of digital rocks through x-ray microtomography imaging has revolutionized the process of characterizing permo-porous properties. As example, the 3D images obtained provides valuable insights into the complex pore network, grain arrangement, properties of fluid flow trough numerical simulations and a overall rock morphology.</p>
 <p>In the present section, the 3D images of Berea sandstone and sandpack LV60A are simulate to validate the single and multiphase routines of LBPM software for values of intrinsic and relative permeability. The results obtainer are compared with the results of Michels et al. (2021) (<a class="reference external" href="https://doi.org/10.1016/j.petrol.2021.108918">https://doi.org/10.1016/j.petrol.2021.108918</a>). The below image ilustrate the 3D images:</p>
 <ul class="simple">
@@ -95,9 +99,9 @@
 </ol>
 </li>
 </ul>
-<p><img alt="abefb544799d414d9dfd2647f02197c7" class="no-scaled-link" src="../_images/Berea-LV60A.png" style="width: 700px; height: 350px;" /></p>
+<p><img alt="fe14e71fe3204864aa919364e5b8b945" class="no-scaled-link" src="../_images/Berea-LV60A.png" style="width: 700px; height: 350px;" /></p>
 <section id="Intrinsic-Permeability---Numerical-Setup">
-<h2>Intrinsic Permeability - Numerical Setup<a class="headerlink" href="#Intrinsic-Permeability---Numerical-Setup" title="Permalink to this heading"></a></h2>
+<h2>Intrinsic Permeability - Numerical Setup<a class="headerlink" href="#Intrinsic-Permeability---Numerical-Setup" title="Permalink to this heading">¶</a></h2>
 <p>The digital rocks domain used in the simulations are given in the Table below for each case.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}[]
@@ -143,12 +147,12 @@
 </div>
 <p>In all cases, the domain set of ” InletLayers = 0, 0, 5” and “OutletLayers = 0, 0, 5” are used to conect inlet and outlet fo the periodic domain.</p>
 <section id="Resultados">
-<h3>Resultados<a class="headerlink" href="#Resultados" title="Permalink to this heading"></a></h3>
+<h3>Resultados<a class="headerlink" href="#Resultados" title="Permalink to this heading">¶</a></h3>
 <p>The stream lines obtained for each case are shown in the Figure below.</p>
 <table><thead><tr><td><table><thead><tr><th style="font-size:21px;text-align: center"><p>Berea Sandstone</p>
-</th></tr></thead><tbody><tr><td><p><img alt="4c6f111d6ebc4049aa8179b5d7318a7f" class="no-scaled-link" src="../_images/Berea-Stream.png" style="width: 400px; height: 325px;" /></p>
+</th></tr></thead><tbody><tr><td><p><img alt="546ce74a529e4a859d75cfcba0023751" class="no-scaled-link" src="../_images/Berea-Stream.png" style="width: 400px; height: 325px;" /></p>
 </td></tr></tbody></table></td><td></td><td></td><td></td><td><table><thead><tr><th style="font-size:21px;text-align: center"><p>Sandpack LV60A</p>
-</th></tr></thead><tbody><tr><td><p><img alt="96f382f7cc414ac2a758c9e1348470a0" class="no-scaled-link" src="../_images/LV60A-Stream.png" style="width: 400px; height: 325px;" /></p>
+</th></tr></thead><tbody><tr><td><p><img alt="7091e9b2390744df85e314c20e21176b" class="no-scaled-link" src="../_images/LV60A-Stream.png" style="width: 400px; height: 325px;" /></p>
 </td></tr></tbody></table></td></tr></thead></table><h3 style="font-size:12px;text-align: center"><p>Table -Permeability comparison with Michels et al. (2021).</p>
 </h3><div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}[]
@@ -163,7 +167,7 @@
 </section>
 </section>
 <section id="Relative-Permeability---Numerical-Setup">
-<h2>Relative Permeability - Numerical Setup<a class="headerlink" href="#Relative-Permeability---Numerical-Setup" title="Permalink to this heading"></a></h2>
+<h2>Relative Permeability - Numerical Setup<a class="headerlink" href="#Relative-Permeability---Numerical-Setup" title="Permalink to this heading">¶</a></h2>
 </section>
 </section>
 
@@ -172,6 +176,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="PermInt.html" class="btn btn-neutral float-left" title="Micromodels" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../note-CodeStruc/Perm-CodeStruc.html" class="btn btn-neutral float-right" title="Code Structure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

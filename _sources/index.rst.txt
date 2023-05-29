@@ -8,10 +8,17 @@ LBPM-Documentation
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Benchmarks:
 
    /notebooks/PermInt
    /notebooks/DigitalRocksK
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Code Structure:
+
+   /note-CodeStruc/Perm-CodeStruc
+
 
 Indices and tables
 ==================

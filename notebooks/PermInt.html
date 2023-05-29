@@ -7,12 +7,11 @@
   <title>Micromodels &mdash; LBPM-Documentation 1.0.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/sphinx_rtd_size.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
@@ -45,7 +44,7 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Benchmarks:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Micromodels</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#Intrinsic-Permeability---Numerical-Setup">Intrinsic Permeability - Numerical Setup</a><ul>
@@ -56,6 +55,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="DigitalRocksK.html">3D Digital Rocks</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Code Structure:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../note-CodeStruc/Perm-CodeStruc.html">Code Structure</a></li>
 </ul>
 
         </div>
@@ -83,7 +86,7 @@
            <div itemprop="articleBody">
              
   <section id="Micromodels">
-<h1>Micromodels<a class="headerlink" href="#Micromodels" title="Permalink to this heading"></a></h1>
+<h1>Micromodels<a class="headerlink" href="#Micromodels" title="Permalink to this heading">¶</a></h1>
 <p>In porous media experimentation, advances in micromodel generation make it possible to represent different rock behavior with micro and macro porosities. However, due to their manufacturing characteristics, micromodels allow only two-dimensional approximations of the pore and connectivity behaviors present in the rock structure.</p>
 <p>In the present Section 4 verification cases for intrinsic permeability of micromodels are simulated using the LBPM (<a class="reference external" href="https://opm-project.org/">https://opm-project.org/</a>) routine lbpm_permeability_simulator. The cases M1, M2, M3 e M4 were simulated and compared with the experimental results of Wolf et al. (2022) (<a class="reference external" href="https://doi.org/10.1039/D2LC00445C">https://doi.org/10.1039/D2LC00445C</a>). All micromodels have square dimensions of 25 x 25 mm and approximate depths of 31(0.5) <span class="math notranslate nohighlight">\(\mu\)</span>m, 34.8(0.9) <span class="math notranslate nohighlight">\(\mu\)</span>m, 33.6(0.5) <span class="math notranslate nohighlight">\(\mu\)</span>m, and 32.0(2.9)
 <span class="math notranslate nohighlight">\(\mu\)</span>m for models M1, M2, M3 and M4, respectively.</p>
@@ -97,12 +100,12 @@
 </th><th style="font-size:19px;text-align: center"><p>M2</p>
 </th><th style="font-size:19px;text-align: center"><p>M3</p>
 </th><th style="font-size:19px;text-align: center"><p>M4</p>
-</th></tr></thead><tbody><tr><td><p><img alt="4c2a89663a874fd693ff1fa44474294d" class="no-scaled-link" src="../_images/M1-P.png" style="width: 200px; height: 200px;" /></p>
-</td><td><p><img alt="ce72561e70b0420b879a944e461b6436" class="no-scaled-link" src="../_images/M2-P.png" style="width: 200px; height: 200px;" /></p>
-</td><td><p><img alt="4cc28203094b4e95be53e9a68baa421e" class="no-scaled-link" src="../_images/M3-P.png" style="width: 200px; height: 200px;" /></p>
-</td><td><p><img alt="ab3ef502bfe74a839b5c526dca9d61bd" class="no-scaled-link" src="../_images/M4-P.png" style="width: 200px; height: 200px;" /></p>
+</th></tr></thead><tbody><tr><td><p><img alt="003e3f8339304d3f8f3df4addad213d4" class="no-scaled-link" src="../_images/M1-P.png" style="width: 200px; height: 200px;" /></p>
+</td><td><p><img alt="5f7bec6089fc49769d6da5c7349af944" class="no-scaled-link" src="../_images/M2-P.png" style="width: 200px; height: 200px;" /></p>
+</td><td><p><img alt="fe00a2d5681b4882bd7636d653cf2390" class="no-scaled-link" src="../_images/M3-P.png" style="width: 200px; height: 200px;" /></p>
+</td><td><p><img alt="511be830d351435abd77ff58b2d40517" class="no-scaled-link" src="../_images/M4-P.png" style="width: 200px; height: 200px;" /></p>
 </td></tr></tbody></table><section id="Intrinsic-Permeability---Numerical-Setup">
-<h2>Intrinsic Permeability - Numerical Setup<a class="headerlink" href="#Intrinsic-Permeability---Numerical-Setup" title="Permalink to this heading"></a></h2>
+<h2>Intrinsic Permeability - Numerical Setup<a class="headerlink" href="#Intrinsic-Permeability---Numerical-Setup" title="Permalink to this heading">¶</a></h2>
 <p>In the micromodels discrete representation are used the meshes described in the Table. At the first and last mesh points of the y and z axes are set as solid to represent the micromodel walls.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}[]
@@ -147,16 +150,16 @@ M4 &amp; 4.57 &amp; 5468 \times 5470 \times 9 &amp; 36.7     \\ \hline
 </div>
 <p>The domain set of ” InletLayers = 0, 0, 5” and “OutletLayers = 0, 0, 5” are used to conect inlet and outlet fo the periodic domain. The discrete images *.raw (as example “M1-Micro-5646x5648x9.raw”) are available at XX.</p>
 <section id="Resultados">
-<h3>Resultados<a class="headerlink" href="#Resultados" title="Permalink to this heading"></a></h3>
+<h3>Resultados<a class="headerlink" href="#Resultados" title="Permalink to this heading">¶</a></h3>
 <p>The velocity magnitude field obtained for each case can be seen in the Figure below.</p>
 <table><thead><tr><th style="font-size:21px;text-align: center"><p>M1</p>
 </th><th style="font-size:21px;text-align: center"><p>M2</p>
 </th><th style="font-size:21px;text-align: center"><p>M3</p>
 </th><th style="font-size:21px;text-align: center"><p>M4</p>
-</th></tr></thead><tbody><tr><td><p><img alt="d8370577054247299ef699b08e141ebe" class="no-scaled-link" src="../_images/M1-R.png" style="width: 200px; height: 200px;" /></p>
-</td><td><p><img alt="c79145317fd64106a3b2a903dd51bde2" class="no-scaled-link" src="../_images/M2-R.png" style="width: 200px; height: 200px;" /></p>
-</td><td><p><img alt="5866b04c02074075b6b0f7c9d928149b" class="no-scaled-link" src="../_images/M3-R.png" style="width: 200px; height: 200px;" /></p>
-</td><td><p><img alt="a2a0314533384f0aa27303e019a77686" class="no-scaled-link" src="../_images/M4-R.png" style="width: 200px; height: 200px;" /></p>
+</th></tr></thead><tbody><tr><td><p><img alt="6560a1186611485a8bdd74d076b812ba" class="no-scaled-link" src="../_images/M1-R.png" style="width: 200px; height: 200px;" /></p>
+</td><td><p><img alt="d098bb4243004985a29a7dfe7dc81b5c" class="no-scaled-link" src="../_images/M2-R.png" style="width: 200px; height: 200px;" /></p>
+</td><td><p><img alt="606d8c7ce98747a99e30790639e6f22e" class="no-scaled-link" src="../_images/M3-R.png" style="width: 200px; height: 200px;" /></p>
+</td><td><p><img alt="3e999f2699bc4e0f9e0b8bbc44d76dfd" class="no-scaled-link" src="../_images/M4-R.png" style="width: 200px; height: 200px;" /></p>
 </td></tr></tbody></table><h3 style="font-size:12px;text-align: center"><p>Table -Porosity and permeability calculations for the analyzed micromodels.</p>
 </h3><div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}[]
@@ -172,7 +175,7 @@ M4    &amp; 36.7      &amp; 36.4(0.2)      &amp; −0.7      &amp; 5.71(1.25)  &
 </section>
 </section>
 <section id="Relative-Permeability---Numerical-Setup">
-<h2>Relative Permeability - Numerical Setup<a class="headerlink" href="#Relative-Permeability---Numerical-Setup" title="Permalink to this heading"></a></h2>
+<h2>Relative Permeability - Numerical Setup<a class="headerlink" href="#Relative-Permeability---Numerical-Setup" title="Permalink to this heading">¶</a></h2>
 </section>
 </section>
 

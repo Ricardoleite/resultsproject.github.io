@@ -15,9 +15,7 @@
     "\n",
     "- (b)  Sandpack LV60A (https://figshare.com/articles/dataset/LV60A_sandpack/1153795/2).\n",
     "\n",
-    "<img src=\"Berea-LV60A.png\" width=\"700\" height=\"350\"/>\n",
-    "\n",
-    "\n"
+    "<img src=\"Berea-LV60A.png\" width=\"700\" height=\"350\" />\n"
    ]
   },
   {
