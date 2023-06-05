@@ -8,20 +8,40 @@
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/sphinx_rtd_size.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script src="../_static/design-tabs.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+        <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="3D Digital Rocks" href="../notebooks/DigitalRocksK.html" /> 
+    <link rel="prev" title="3D Digital Rocks" href="../notebooks/tauK.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -43,17 +63,21 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Benchmarks:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">LBPM - Benchmarks:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/PermInt.html">Micromodels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/DigitalRocksK.html">3D Digital Rocks</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Code Structure:</span></p>
+<p class="caption" role="heading"><span class="caption-text">LBPM - Lattice Boltzmann Analysis:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/tauK.html">3D Digital Rocks</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">LBPM - Code Structure:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Code Structure</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#lbpm_permeability_simulator">lbpm_permeability_simulator</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Level-1-and-2">Level 1 and 2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Level-3">Level 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lbpm-permeability-simulator">lbpm_permeability_simulator</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#level-1-and-2">Level 1 and 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#level-3">Level 3</a></li>
 </ul>
 </li>
 </ul>
@@ -76,7 +100,7 @@
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Code Structure</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/note-CodeStruc/Perm-CodeStruc.ipynb.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/note-CodeStruc/Perm-CodeStruc.ipynb" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -84,28 +108,47 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="Code-Structure">
-<h1>Code Structure<a class="headerlink" href="#Code-Structure" title="Permalink to this heading">¶</a></h1>
-<p>Acess link <a class="reference external" href="https://www.canva.com/design/DAFjxRmYGjQ/YXu_7lDRvhdepO3ngIsVNg/edit?utm_content=DAFjxRmYGjQ&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=sharebutton">https://www.canva.com/design/DAFjxRmYGjQ/YXu_7lDRvhdepO3ngIsVNg/edit?utm_content=DAFjxRmYGjQ&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=sharebutton</a></p>
-<section id="lbpm_permeability_simulator">
-<h2>lbpm_permeability_simulator<a class="headerlink" href="#lbpm_permeability_simulator" title="Permalink to this heading">¶</a></h2>
-<p><img alt="5e63e6dc692343f1b32cbb9670dd44e5" class="no-scaled-link" src="../_images/All.png" style="width: 1200px; height: 1000px;" /></p>
-<section id="Level-1-and-2">
-<h3>Level 1 and 2<a class="headerlink" href="#Level-1-and-2" title="Permalink to this heading">¶</a></h3>
-<p><img alt="753f150d296b40b0997d9fe43bcee087" class="no-scaled-link" src="../_images/1e2.png" style="width: 1200px; height: 300px;" /></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="code-structure">
+<h1>Code Structure<a class="headerlink" href="#code-structure" title="Permalink to this heading"></a></h1>
+<p>Acess link <a class="reference external" href="https://www.canva.com/design/DAFjxRmYGjQ/YXu_7lDRvhdepO3ngIsVNg/edit?utm_content=DAFjxRmYGjQ&amp;amp;utm_campaign=designshare&amp;amp;utm_medium=link2&amp;amp;utm_source=sharebutton">https://www.canva.com/design/DAFjxRmYGjQ/YXu_7lDRvhdepO3ngIsVNg/edit?utm_content=DAFjxRmYGjQ&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=sharebutton</a></p>
+<section id="lbpm-permeability-simulator">
+<h2>lbpm_permeability_simulator<a class="headerlink" href="#lbpm-permeability-simulator" title="Permalink to this heading"></a></h2>
+<a class="reference internal image-reference" href="../_images/All.png"><img alt="../_images/All.png" src="../_images/All.png" style="width: 1200px; height: 1000px;" /></a>
+<section id="level-1-and-2">
+<h3>Level 1 and 2<a class="headerlink" href="#level-1-and-2" title="Permalink to this heading"></a></h3>
+<a class="reference internal image-reference" href="../_images/1e2.png"><img alt="../_images/1e2.png" src="../_images/1e2.png" style="width: 1200px; height: 300px;" /></a>
 </section>
-<section id="Level-3">
-<h3>Level 3<a class="headerlink" href="#Level-3" title="Permalink to this heading">¶</a></h3>
-<p><img alt="c02d9086fe594b05828851b686555894" class="no-scaled-link" src="../_images/3.png" style="width: 1200px; height: 300px;" /></p>
+<section id="level-3">
+<h3>Level 3<a class="headerlink" href="#level-3" title="Permalink to this heading"></a></h3>
+<a class="reference internal image-reference" href="../_images/3.png"><img alt="../_images/3.png" src="../_images/3.png" style="width: 1200px; height: 300px;" /></a>
 </section>
 </section>
 </section>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./note-CodeStruc"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../notebooks/DigitalRocksK.html" class="btn btn-neutral float-left" title="3D Digital Rocks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../notebooks/tauK.html" class="btn btn-neutral float-left" title="3D Digital Rocks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

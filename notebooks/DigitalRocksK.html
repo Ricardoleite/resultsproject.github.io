@@ -8,20 +8,42 @@
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/sphinx_rtd_size.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script src="../_static/design-tabs.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+        <script async="async" src="../_static/sphinx-thebe.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Code Structure" href="../note-CodeStruc/Perm-CodeStruc.html" />
+    <link rel="next" title="Relaxation Time - Permeability – Dependecy Analysis" href="tauK.html" />
     <link rel="prev" title="Micromodels" href="PermInt.html" /> 
 </head>
 
@@ -44,21 +66,29 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Benchmarks:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">LBPM - Benchmarks:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="PermInt.html">Micromodels</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">3D Digital Rocks</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#Intrinsic-Permeability---Numerical-Setup">Intrinsic Permeability - Numerical Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Resultados">Resultados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#intrinsic-permeability-numerical-setup">Intrinsic Permeability - Numerical Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#resultados">Resultados</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#Relative-Permeability---Numerical-Setup">Relative Permeability - Numerical Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#relative-permeability-numerical-setup">Relative Permeability - Numerical Setup</a></li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Code Structure:</span></p>
+<p class="caption" role="heading"><span class="caption-text">LBPM - Lattice Boltzmann Analysis:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tauK.html">Relaxation Time - Permeability – Dependecy Analysis</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">LBPM - Code Structure:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../note-CodeStruc/Perm-CodeStruc.html">Code Structure</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">LBPM - Automatized Measurement of Contact Angle:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tauK.html">Relaxation Time - Permeability – Dependecy Analysis</a></li>
 </ul>
 
         </div>
@@ -77,7 +107,7 @@
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">3D Digital Rocks</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/notebooks/DigitalRocksK.ipynb.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/notebooks/DigitalRocksK.ipynb" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -85,26 +115,21 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="3D-Digital-Rocks">
-<h1>3D Digital Rocks<a class="headerlink" href="#3D-Digital-Rocks" title="Permalink to this heading">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="d-digital-rocks">
+<h1>3D Digital Rocks<a class="headerlink" href="#d-digital-rocks" title="Permalink to this heading"></a></h1>
 <p>The generation of digital rocks through x-ray microtomography imaging has revolutionized the process of characterizing permo-porous properties. As example, the 3D images obtained provides valuable insights into the complex pore network, grain arrangement, properties of fluid flow trough numerical simulations and a overall rock morphology.</p>
-<p>In the present section, the 3D images of Berea sandstone and sandpack LV60A are simulate to validate the single and multiphase routines of LBPM software for values of intrinsic and relative permeability. The results obtainer are compared with the results of Michels et al. (2021) (<a class="reference external" href="https://doi.org/10.1016/j.petrol.2021.108918">https://doi.org/10.1016/j.petrol.2021.108918</a>). The below image ilustrate the 3D images:</p>
+<p>In the present section, the 3D images of Berea sandstone and sandpack LV60A are simulate to  validate the single and multiphase routines of LBPM software for values of intrinsic and relative permeability. The results obtainer are compared with the results of Michels et al. (2021) (<a class="reference external" href="https://doi.org/10.1016/j.petrol.2021.108918">https://doi.org/10.1016/j.petrol.2021.108918</a>). The below image ilustrate the 3D images:</p>
 <ul class="simple">
-<li><ol class="loweralpha simple">
-<li><p>Berea sandstone (<a class="reference external" href="https://figshare.com/articles/dataset/Berea_Sandstone/1153794/2">https://figshare.com/articles/dataset/Berea_Sandstone/1153794/2</a>);</p></li>
-</ol>
-</li>
-<li><ol class="loweralpha simple" start="2">
-<li><p>Sandpack LV60A (<a class="reference external" href="https://figshare.com/articles/dataset/LV60A_sandpack/1153795/2">https://figshare.com/articles/dataset/LV60A_sandpack/1153795/2</a>).</p></li>
-</ol>
-</li>
+<li><p>(a)  Berea sandstone (<a class="reference external" href="https://figshare.com/articles/dataset/Berea_Sandstone/1153794/2">https://figshare.com/articles/dataset/Berea_Sandstone/1153794/2</a>);</p></li>
+<li><p>(b)  Sandpack LV60A (<a class="reference external" href="https://figshare.com/articles/dataset/LV60A_sandpack/1153795/2">https://figshare.com/articles/dataset/LV60A_sandpack/1153795/2</a>).</p></li>
 </ul>
-<p><img alt="fe14e71fe3204864aa919364e5b8b945" class="no-scaled-link" src="../_images/Berea-LV60A.png" style="width: 700px; height: 350px;" /></p>
-<section id="Intrinsic-Permeability---Numerical-Setup">
-<h2>Intrinsic Permeability - Numerical Setup<a class="headerlink" href="#Intrinsic-Permeability---Numerical-Setup" title="Permalink to this heading">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/Berea-LV60A.png"><img alt="../_images/Berea-LV60A.png" src="../_images/Berea-LV60A.png" style="width: 700px; height: 350px;" /></a>
+<section id="intrinsic-permeability-numerical-setup">
+<h2>Intrinsic Permeability - Numerical Setup<a class="headerlink" href="#intrinsic-permeability-numerical-setup" title="Permalink to this heading"></a></h2>
 <p>The digital rocks domain used in the simulations are given in the Table below for each case.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}[]
+\[\begin{split}
+\begin{aligned}[]
 \begin{array}{ccccc}
 \hline
 \textrm{Parameters} &amp;  &amp;  &amp; \textrm{Berea}     &amp; \textrm{LV60A}     \\ \hline
@@ -114,7 +139,8 @@
 \textrm{Porosity} (\%)                  &amp;  &amp;  &amp; 19.8      &amp; 36.8      \\
 \textrm{Intrinsic Permeability (Darcy)} &amp;  &amp;  &amp; 1.55      &amp; 36.58     \\ \hline
 \end{array}
-\end{aligned}\end{split}\]</div>
+\end{aligned}
+\end{split}\]</div>
 <p>The LBPM setup, using as example the Berea sandstone, is given by</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">MRT</span><span class="w"> </span><span class="p">{</span>
 <span class="w">   </span><span class="n">tau</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span>
@@ -146,37 +172,66 @@
 </pre></div>
 </div>
 <p>In all cases, the domain set of ” InletLayers = 0, 0, 5” and “OutletLayers = 0, 0, 5” are used to conect inlet and outlet fo the periodic domain.</p>
-<section id="Resultados">
-<h3>Resultados<a class="headerlink" href="#Resultados" title="Permalink to this heading">¶</a></h3>
+<section id="resultados">
+<h3>Resultados<a class="headerlink" href="#resultados" title="Permalink to this heading"></a></h3>
 <p>The stream lines obtained for each case are shown in the Figure below.</p>
-<table><thead><tr><td><table><thead><tr><th style="font-size:21px;text-align: center"><p>Berea Sandstone</p>
-</th></tr></thead><tbody><tr><td><p><img alt="546ce74a529e4a859d75cfcba0023751" class="no-scaled-link" src="../_images/Berea-Stream.png" style="width: 400px; height: 325px;" /></p>
-</td></tr></tbody></table></td><td></td><td></td><td></td><td><table><thead><tr><th style="font-size:21px;text-align: center"><p>Sandpack LV60A</p>
-</th></tr></thead><tbody><tr><td><p><img alt="7091e9b2390744df85e314c20e21176b" class="no-scaled-link" src="../_images/LV60A-Stream.png" style="width: 400px; height: 325px;" /></p>
-</td></tr></tbody></table></td></tr></thead></table><h3 style="font-size:12px;text-align: center"><p>Table -Permeability comparison with Michels et al. (2021).</p>
-</h3><div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}[]
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p><p style="font-size:21px;text-align: center">Berea Sandstone</p></p></th>
+<th class="head text-center"><p><p style="font-size:21px;text-align: center">Sandpack LV60A</p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="../_images/Berea-Stream.png"><img alt="../_images/Berea-Stream.png" src="../_images/Berea-Stream.png" style="width: 400px; height: 325px;" /></a></p></td>
+<td class="text-center"><p><a class="reference internal" href="../_images/LV60A-Stream.png"><img alt="../_images/LV60A-Stream.png" src="../_images/LV60A-Stream.png" style="width: 400px; height: 325px;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+<h3 style="font-size:12px;text-align: center">Table -Permeability comparison with Michels et al. (2021).</h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}[]
 \begin{array}{cccc}
 \hline
  &amp; (\textrm{Michels et al. 2021})  &amp; \textrm{LBPM} &amp;  \\ \hline
 \textrm{Model} &amp; k[Darcy]  &amp; k[Darcy] &amp; Error[\%]  \\ \hline
-\textrm{Berea Sandstone}  &amp; 1.55  &amp;    1.95    &amp;     25.81    \\
+\textrm{Berea Sandstone}  &amp; 1.55  &amp;    1.95    &amp;     25.81    \\ 
 \textrm{LV60A Sandpack}   &amp; 36.58  &amp;    38.84    &amp;    6.17  \\ \hline
 \end{array}
-\end{aligned}\end{split}\]</div>
+\end{aligned}
+\end{split}\]</div>
 </section>
 </section>
-<section id="Relative-Permeability---Numerical-Setup">
-<h2>Relative Permeability - Numerical Setup<a class="headerlink" href="#Relative-Permeability---Numerical-Setup" title="Permalink to this heading">¶</a></h2>
+<section id="relative-permeability-numerical-setup">
+<h2>Relative Permeability - Numerical Setup<a class="headerlink" href="#relative-permeability-numerical-setup" title="Permalink to this heading"></a></h2>
 </section>
 </section>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="PermInt.html" class="btn btn-neutral float-left" title="Micromodels" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../note-CodeStruc/Perm-CodeStruc.html" class="btn btn-neutral float-right" title="Code Structure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="tauK.html" class="btn btn-neutral float-right" title="Relaxation Time - Permeability – Dependecy Analysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

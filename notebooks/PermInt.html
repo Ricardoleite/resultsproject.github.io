@@ -8,14 +8,36 @@
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/sphinx_rtd_size.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script src="../_static/design-tabs.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+        <script async="async" src="../_static/sphinx-thebe.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -44,19 +66,23 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Benchmarks:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">LBPM - Benchmarks:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Micromodels</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#Intrinsic-Permeability---Numerical-Setup">Intrinsic Permeability - Numerical Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Resultados">Resultados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#intrinsic-permeability-numerical-setup">Intrinsic Permeability - Numerical Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#resultados">Resultados</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#Relative-Permeability---Numerical-Setup">Relative Permeability - Numerical Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#relative-permeability-numerical-setup">Relative Permeability - Numerical Setup</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="DigitalRocksK.html">3D Digital Rocks</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Code Structure:</span></p>
+<p class="caption" role="heading"><span class="caption-text">LBPM - Lattice Boltzmann Analysis:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tauK.html">3D Digital Rocks</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">LBPM - Code Structure:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../note-CodeStruc/Perm-CodeStruc.html">Code Structure</a></li>
 </ul>
@@ -77,7 +103,7 @@
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Micromodels</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/notebooks/PermInt.ipynb.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/notebooks/PermInt.ipynb" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -85,39 +111,48 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="Micromodels">
-<h1>Micromodels<a class="headerlink" href="#Micromodels" title="Permalink to this heading">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="micromodels">
+<h1>Micromodels<a class="headerlink" href="#micromodels" title="Permalink to this heading"></a></h1>
 <p>In porous media experimentation, advances in micromodel generation make it possible to represent different rock behavior with micro and macro porosities. However, due to their manufacturing characteristics, micromodels allow only two-dimensional approximations of the pore and connectivity behaviors present in the rock structure.</p>
-<p>In the present Section 4 verification cases for intrinsic permeability of micromodels are simulated using the LBPM (<a class="reference external" href="https://opm-project.org/">https://opm-project.org/</a>) routine lbpm_permeability_simulator. The cases M1, M2, M3 e M4 were simulated and compared with the experimental results of Wolf et al. (2022) (<a class="reference external" href="https://doi.org/10.1039/D2LC00445C">https://doi.org/10.1039/D2LC00445C</a>). All micromodels have square dimensions of 25 x 25 mm and approximate depths of 31(0.5) <span class="math notranslate nohighlight">\(\mu\)</span>m, 34.8(0.9) <span class="math notranslate nohighlight">\(\mu\)</span>m, 33.6(0.5) <span class="math notranslate nohighlight">\(\mu\)</span>m, and 32.0(2.9)
-<span class="math notranslate nohighlight">\(\mu\)</span>m for models M1, M2, M3 and M4, respectively.</p>
+<p>In the present Section 4 verification cases for intrinsic permeability of micromodels are simulated using the LBPM (<a class="reference external" href="https://opm-project.org/">https://opm-project.org/</a>) routine lbpm_permeability_simulator. The cases M1, M2, M3 e M4 were simulated and compared with the experimental results of Wolf et al. (2022) (<a class="reference external" href="https://doi.org/10.1039/D2LC00445C">https://doi.org/10.1039/D2LC00445C</a>). All micromodels have square dimensions of 25 x 25 mm and approximate depths of 31(0.5) <span class="math notranslate nohighlight">\(\mu\)</span>m, 34.8(0.9) <span class="math notranslate nohighlight">\(\mu\)</span>m, 33.6(0.5) <span class="math notranslate nohighlight">\(\mu\)</span>m, and 32.0(2.9) <span class="math notranslate nohighlight">\(\mu\)</span>m for models M1, M2, M3 and M4, respectively.</p>
 <ul class="simple">
 <li><p>Micromodel 1 (M1): macro pore scale with pore diameter ranging from 200 to 500 <span class="math notranslate nohighlight">\(\mu\)</span>m;</p></li>
 <li><p>Micromodel 2 (M2): dual pore scale version of M1 with porous grains of pore diameter ranging from 20 to 50 <span class="math notranslate nohighlight">\(\mu\)</span>m;</p></li>
 <li><p>Micromodel 3 (M3): dual pore scale version of M1 with porous grains and porous throats, both with pore diameter ranging from 20 to 50 <span class="math notranslate nohighlight">\(\mu\)</span>m;</p></li>
 <li><p>Micromodel 4 (M4): dual pore scale version of M1 with voids and porous throats of pore diameter ranging from 20 to 50 <span class="math notranslate nohighlight">\(\mu\)</span>m.</p></li>
 </ul>
-<table><thead><tr><th style="font-size:19px;text-align: center"><p>M1</p>
-</th><th style="font-size:19px;text-align: center"><p>M2</p>
-</th><th style="font-size:19px;text-align: center"><p>M3</p>
-</th><th style="font-size:19px;text-align: center"><p>M4</p>
-</th></tr></thead><tbody><tr><td><p><img alt="003e3f8339304d3f8f3df4addad213d4" class="no-scaled-link" src="../_images/M1-P.png" style="width: 200px; height: 200px;" /></p>
-</td><td><p><img alt="5f7bec6089fc49769d6da5c7349af944" class="no-scaled-link" src="../_images/M2-P.png" style="width: 200px; height: 200px;" /></p>
-</td><td><p><img alt="fe00a2d5681b4882bd7636d653cf2390" class="no-scaled-link" src="../_images/M3-P.png" style="width: 200px; height: 200px;" /></p>
-</td><td><p><img alt="511be830d351435abd77ff58b2d40517" class="no-scaled-link" src="../_images/M4-P.png" style="width: 200px; height: 200px;" /></p>
-</td></tr></tbody></table><section id="Intrinsic-Permeability---Numerical-Setup">
-<h2>Intrinsic Permeability - Numerical Setup<a class="headerlink" href="#Intrinsic-Permeability---Numerical-Setup" title="Permalink to this heading">¶</a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p><p style="font-size:21px;text-align: center">M1</p></p></th>
+<th class="head text-center"><p><p style="font-size:21px;text-align: center">M2</p></p></th>
+<th class="head text-center"><p><p style="font-size:21px;text-align: center">M3</p></p></th>
+<th class="head text-center"><p><p style="font-size:21px;text-align: center">M4</p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="../_images/M1-P.png"><img alt="../_images/M1-P.png" src="../_images/M1-P.png" style="width: 200px; height: 200px;" /></a></p></td>
+<td class="text-center"><p><a class="reference internal" href="../_images/M2-P.png"><img alt="../_images/M2-P.png" src="../_images/M2-P.png" style="width: 200px; height: 200px;" /></a></p></td>
+<td class="text-center"><p><a class="reference internal" href="../_images/M3-P.png"><img alt="../_images/M3-P.png" src="../_images/M3-P.png" style="width: 200px; height: 200px;" /></a></p></td>
+<td class="text-center"><p><a class="reference internal" href="../_images/M4-P.png"><img alt="../_images/M4-P.png" src="../_images/M4-P.png" style="width: 200px; height: 200px;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+<section id="intrinsic-permeability-numerical-setup">
+<h2>Intrinsic Permeability - Numerical Setup<a class="headerlink" href="#intrinsic-permeability-numerical-setup" title="Permalink to this heading"></a></h2>
 <p>In the micromodels discrete representation are used the meshes described in the Table. At the first and last mesh points of the y and z axes are set as solid to represent the micromodel walls.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}[]
+\[\begin{split}
+\begin{aligned}[]
 \begin{array}{ccc}
 \hline
 \textrm{Model} &amp; \textrm{Voxel size} (\mu m) &amp; \textrm{Grid } (x,y,z) &amp; \phi_{dig}[\%]  \\ \hline
-M1 &amp; 4.42 &amp; 5646 \times 5648 \times 9 &amp; 27.3     \\
-M2 &amp; 5.00 &amp; 5000 \times 5002 \times 9 &amp; 40.2     \\
-M3 &amp; 4.86 &amp; 5148 \times 5150 \times 9 &amp; 33.6     \\
+M1 &amp; 4.42 &amp; 5646 \times 5648 \times 9 &amp; 27.3     \\ 
+M2 &amp; 5.00 &amp; 5000 \times 5002 \times 9 &amp; 40.2     \\ 
+M3 &amp; 4.86 &amp; 5148 \times 5150 \times 9 &amp; 33.6     \\ 
 M4 &amp; 4.57 &amp; 5468 \times 5470 \times 9 &amp; 36.7     \\ \hline
 \end{array}
-\end{aligned}\end{split}\]</div>
+\end{aligned}
+\end{split}\]</div>
 <p>The LBPM setup, using as example the M1 model, is given by</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">MRT</span><span class="w"> </span><span class="p">{</span>
 <span class="w">   </span><span class="n">tau</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span>
@@ -149,36 +184,65 @@ M4 &amp; 4.57 &amp; 5468 \times 5470 \times 9 &amp; 36.7     \\ \hline
 </pre></div>
 </div>
 <p>The domain set of ” InletLayers = 0, 0, 5” and “OutletLayers = 0, 0, 5” are used to conect inlet and outlet fo the periodic domain. The discrete images *.raw (as example “M1-Micro-5646x5648x9.raw”) are available at XX.</p>
-<section id="Resultados">
-<h3>Resultados<a class="headerlink" href="#Resultados" title="Permalink to this heading">¶</a></h3>
+<section id="resultados">
+<h3>Resultados<a class="headerlink" href="#resultados" title="Permalink to this heading"></a></h3>
 <p>The velocity magnitude field obtained for each case can be seen in the Figure below.</p>
-<table><thead><tr><th style="font-size:21px;text-align: center"><p>M1</p>
-</th><th style="font-size:21px;text-align: center"><p>M2</p>
-</th><th style="font-size:21px;text-align: center"><p>M3</p>
-</th><th style="font-size:21px;text-align: center"><p>M4</p>
-</th></tr></thead><tbody><tr><td><p><img alt="6560a1186611485a8bdd74d076b812ba" class="no-scaled-link" src="../_images/M1-R.png" style="width: 200px; height: 200px;" /></p>
-</td><td><p><img alt="d098bb4243004985a29a7dfe7dc81b5c" class="no-scaled-link" src="../_images/M2-R.png" style="width: 200px; height: 200px;" /></p>
-</td><td><p><img alt="606d8c7ce98747a99e30790639e6f22e" class="no-scaled-link" src="../_images/M3-R.png" style="width: 200px; height: 200px;" /></p>
-</td><td><p><img alt="3e999f2699bc4e0f9e0b8bbc44d76dfd" class="no-scaled-link" src="../_images/M4-R.png" style="width: 200px; height: 200px;" /></p>
-</td></tr></tbody></table><h3 style="font-size:12px;text-align: center"><p>Table -Porosity and permeability calculations for the analyzed micromodels.</p>
-</h3><div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}[]
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p><p style="font-size:21px;text-align: center">M1</p></p></th>
+<th class="head text-center"><p><p style="font-size:21px;text-align: center">M2</p></p></th>
+<th class="head text-center"><p><p style="font-size:21px;text-align: center">M3</p></p></th>
+<th class="head text-center"><p><p style="font-size:21px;text-align: center">M4</p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="../_images/M1-R.png"><img alt="../_images/M1-R.png" src="../_images/M1-R.png" style="width: 200px; height: 200px;" /></a></p></td>
+<td class="text-center"><p><a class="reference internal" href="../_images/M2-R.png"><img alt="../_images/M2-R.png" src="../_images/M2-R.png" style="width: 200px; height: 200px;" /></a></p></td>
+<td class="text-center"><p><a class="reference internal" href="../_images/M3-R.png"><img alt="../_images/M3-R.png" src="../_images/M3-R.png" style="width: 200px; height: 200px;" /></a></p></td>
+<td class="text-center"><p><a class="reference internal" href="../_images/M4-R.png"><img alt="../_images/M4-R.png" src="../_images/M4-R.png" style="width: 200px; height: 200px;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+<h3 style="font-size:12px;text-align: center">Table -Porosity and permeability calculations for the analyzed micromodels.</h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}[]
 \begin{array}{cccccccc}
 \hline
 Model &amp; \phi_{dig}[\%] &amp; \phi_{exp}[\%] &amp; Error[\%] &amp; k[Darcy]  &amp; k_{LBPM}[Darcy] &amp; Error[\%] &amp; k^{*}_{LBPM}[Darcy] \\ \hline
-M1    &amp; 27.3      &amp; 27.2(0.1)      &amp; −0.1      &amp; 8.91(0.03)  &amp;    9.49    &amp;     6.51 &amp;   2.56   \\
-M2    &amp; 40.2      &amp; 39.7(0.2)      &amp; −1.2      &amp; 13.24(0.44) &amp;   16.56    &amp;    25.05 &amp;   6.65 \\
-M3    &amp; 33.6      &amp; 34.7(0.3)      &amp; 3.4       &amp; 5.74(0.01)  &amp;    7.26    &amp;    26.57 &amp;   2.43  \\
+M1    &amp; 27.3      &amp; 27.2(0.1)      &amp; −0.1      &amp; 8.91(0.03)  &amp;    9.49    &amp;     6.51 &amp;   2.56   \\ 
+M2    &amp; 40.2      &amp; 39.7(0.2)      &amp; −1.2      &amp; 13.24(0.44) &amp;   16.56    &amp;    25.05 &amp;   6.65 \\ 
+M3    &amp; 33.6      &amp; 34.7(0.3)      &amp; 3.4       &amp; 5.74(0.01)  &amp;    7.26    &amp;    26.57 &amp;   2.43  \\ 
 M4    &amp; 36.7      &amp; 36.4(0.2)      &amp; −0.7      &amp; 5.71(1.25)  &amp;    4.41    &amp;    22.73 &amp;   1.59 \\ \hline
 \end{array}
-\end{aligned}\end{split}\]</div>
+\end{aligned}
+\end{split}\]</div>
 </section>
 </section>
-<section id="Relative-Permeability---Numerical-Setup">
-<h2>Relative Permeability - Numerical Setup<a class="headerlink" href="#Relative-Permeability---Numerical-Setup" title="Permalink to this heading">¶</a></h2>
+<section id="relative-permeability-numerical-setup">
+<h2>Relative Permeability - Numerical Setup<a class="headerlink" href="#relative-permeability-numerical-setup" title="Permalink to this heading"></a></h2>
 </section>
 </section>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
            </div>
           </div>
