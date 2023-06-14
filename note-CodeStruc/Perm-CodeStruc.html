@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Code Structure &mdash; LBPM-Documentation 1.0.0 documentation</title>
@@ -20,7 +20,6 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
         <script src="../_static/clipboard.min.js"></script>
@@ -41,7 +40,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="3D Digital Rocks" href="../notebooks/tauK.html" /> 
+    <link rel="next" title="Gota Plana - Benchmark" href="../Note-Cris/Gota-Plana.html" />
+    <link rel="prev" title="Relaxation Time - Permeability – Dependecy Analysis" href="../notebooks/tauK.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -49,30 +49,26 @@ const thebe_selector_output = ".output, .cell_output"
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-
-          
-          
-          <a href="../index.html" class="icon icon-home">
-            LBPM-Documentation
+            <a href="../index.html" class="icon icon-home"> LBPM-Documentation
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">LBPM - Benchmarks:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Benchmarks:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/PermInt.html">Micromodels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/DigitalRocksK.html">3D Digital Rocks</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">LBPM - Lattice Boltzmann Analysis:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Lattice Boltzmann Analysis:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/tauK.html">3D Digital Rocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/tauK.html">Relaxation Time - Permeability – Dependecy Analysis</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">LBPM - Code Structure:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Code Structure:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Code Structure</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#lbpm-permeability-simulator">lbpm_permeability_simulator</a><ul>
@@ -82,6 +78,10 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Automatized Measurement of Contact Angle:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Note-Cris/Gota-Plana.html">Gota Plana - Benchmark</a></li>
 </ul>
 
         </div>
@@ -97,7 +97,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
       <li class="breadcrumb-item active">Code Structure</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/note-CodeStruc/Perm-CodeStruc.ipynb" rel="nofollow"> View page source</a>
@@ -109,17 +109,17 @@ const thebe_selector_output = ".output, .cell_output"
            <div itemprop="articleBody">
              
   <section class="tex2jax_ignore mathjax_ignore" id="code-structure">
-<h1>Code Structure<a class="headerlink" href="#code-structure" title="Permalink to this heading"></a></h1>
+<h1>Code Structure<a class="headerlink" href="#code-structure" title="Permalink to this headline"></a></h1>
 <p>Acess link <a class="reference external" href="https://www.canva.com/design/DAFjxRmYGjQ/YXu_7lDRvhdepO3ngIsVNg/edit?utm_content=DAFjxRmYGjQ&amp;amp;utm_campaign=designshare&amp;amp;utm_medium=link2&amp;amp;utm_source=sharebutton">https://www.canva.com/design/DAFjxRmYGjQ/YXu_7lDRvhdepO3ngIsVNg/edit?utm_content=DAFjxRmYGjQ&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=sharebutton</a></p>
 <section id="lbpm-permeability-simulator">
-<h2>lbpm_permeability_simulator<a class="headerlink" href="#lbpm-permeability-simulator" title="Permalink to this heading"></a></h2>
+<h2>lbpm_permeability_simulator<a class="headerlink" href="#lbpm-permeability-simulator" title="Permalink to this headline"></a></h2>
 <a class="reference internal image-reference" href="../_images/All.png"><img alt="../_images/All.png" src="../_images/All.png" style="width: 1200px; height: 1000px;" /></a>
 <section id="level-1-and-2">
-<h3>Level 1 and 2<a class="headerlink" href="#level-1-and-2" title="Permalink to this heading"></a></h3>
+<h3>Level 1 and 2<a class="headerlink" href="#level-1-and-2" title="Permalink to this headline"></a></h3>
 <a class="reference internal image-reference" href="../_images/1e2.png"><img alt="../_images/1e2.png" src="../_images/1e2.png" style="width: 1200px; height: 300px;" /></a>
 </section>
 <section id="level-3">
-<h3>Level 3<a class="headerlink" href="#level-3" title="Permalink to this heading"></a></h3>
+<h3>Level 3<a class="headerlink" href="#level-3" title="Permalink to this headline"></a></h3>
 <a class="reference internal image-reference" href="../_images/3.png"><img alt="../_images/3.png" src="../_images/3.png" style="width: 1200px; height: 300px;" /></a>
 </section>
 </section>
@@ -148,7 +148,8 @@ const thebe_selector_output = ".output, .cell_output"
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../notebooks/tauK.html" class="btn btn-neutral float-left" title="3D Digital Rocks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../notebooks/tauK.html" class="btn btn-neutral float-left" title="Relaxation Time - Permeability – Dependecy Analysis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Note-Cris/Gota-Plana.html" class="btn btn-neutral float-right" title="Gota Plana - Benchmark" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

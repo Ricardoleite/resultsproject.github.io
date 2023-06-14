@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Micromodels &mdash; LBPM-Documentation 1.0.0 documentation</title>
@@ -20,7 +20,6 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
         <script src="../_static/clipboard.min.js"></script>
@@ -52,21 +51,17 @@ const thebe_selector_output = ".output, .cell_output"
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-
-          
-          
-          <a href="../index.html" class="icon icon-home">
-            LBPM-Documentation
+            <a href="../index.html" class="icon icon-home"> LBPM-Documentation
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">LBPM - Benchmarks:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Benchmarks:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Micromodels</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#intrinsic-permeability-numerical-setup">Intrinsic Permeability - Numerical Setup</a><ul>
@@ -78,13 +73,17 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1"><a class="reference internal" href="DigitalRocksK.html">3D Digital Rocks</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">LBPM - Lattice Boltzmann Analysis:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Lattice Boltzmann Analysis:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="tauK.html">3D Digital Rocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tauK.html">Relaxation Time - Permeability – Dependecy Analysis</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">LBPM - Code Structure:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Code Structure:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../note-CodeStruc/Perm-CodeStruc.html">Code Structure</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Automatized Measurement of Contact Angle:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Note-Cris/Gota-Plana.html">Gota Plana - Benchmark</a></li>
 </ul>
 
         </div>
@@ -100,7 +99,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
       <li class="breadcrumb-item active">Micromodels</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/notebooks/PermInt.ipynb" rel="nofollow"> View page source</a>
@@ -112,7 +111,7 @@ const thebe_selector_output = ".output, .cell_output"
            <div itemprop="articleBody">
              
   <section class="tex2jax_ignore mathjax_ignore" id="micromodels">
-<h1>Micromodels<a class="headerlink" href="#micromodels" title="Permalink to this heading"></a></h1>
+<h1>Micromodels<a class="headerlink" href="#micromodels" title="Permalink to this headline"></a></h1>
 <p>In porous media experimentation, advances in micromodel generation make it possible to represent different rock behavior with micro and macro porosities. However, due to their manufacturing characteristics, micromodels allow only two-dimensional approximations of the pore and connectivity behaviors present in the rock structure.</p>
 <p>In the present Section 4 verification cases for intrinsic permeability of micromodels are simulated using the LBPM (<a class="reference external" href="https://opm-project.org/">https://opm-project.org/</a>) routine lbpm_permeability_simulator. The cases M1, M2, M3 e M4 were simulated and compared with the experimental results of Wolf et al. (2022) (<a class="reference external" href="https://doi.org/10.1039/D2LC00445C">https://doi.org/10.1039/D2LC00445C</a>). All micromodels have square dimensions of 25 x 25 mm and approximate depths of 31(0.5) <span class="math notranslate nohighlight">\(\mu\)</span>m, 34.8(0.9) <span class="math notranslate nohighlight">\(\mu\)</span>m, 33.6(0.5) <span class="math notranslate nohighlight">\(\mu\)</span>m, and 32.0(2.9) <span class="math notranslate nohighlight">\(\mu\)</span>m for models M1, M2, M3 and M4, respectively.</p>
 <ul class="simple">
@@ -121,12 +120,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Micromodel 3 (M3): dual pore scale version of M1 with porous grains and porous throats, both with pore diameter ranging from 20 to 50 <span class="math notranslate nohighlight">\(\mu\)</span>m;</p></li>
 <li><p>Micromodel 4 (M4): dual pore scale version of M1 with voids and porous throats of pore diameter ranging from 20 to 50 <span class="math notranslate nohighlight">\(\mu\)</span>m.</p></li>
 </ul>
-<table class="docutils align-default">
+<table class="colwidths-auto docutils align-default">
 <thead>
-<tr class="row-odd"><th class="head text-center"><p><p style="font-size:21px;text-align: center">M1</p></p></th>
-<th class="head text-center"><p><p style="font-size:21px;text-align: center">M2</p></p></th>
-<th class="head text-center"><p><p style="font-size:21px;text-align: center">M3</p></p></th>
-<th class="head text-center"><p><p style="font-size:21px;text-align: center">M4</p></p></th>
+<tr class="row-odd"><th class="text-center head"><p><p style="font-size:21px;text-align: center">M1</p></p></th>
+<th class="text-center head"><p><p style="font-size:21px;text-align: center">M2</p></p></th>
+<th class="text-center head"><p><p style="font-size:21px;text-align: center">M3</p></p></th>
+<th class="text-center head"><p><p style="font-size:21px;text-align: center">M4</p></p></th>
 </tr>
 </thead>
 <tbody>
@@ -138,7 +137,7 @@ const thebe_selector_output = ".output, .cell_output"
 </tbody>
 </table>
 <section id="intrinsic-permeability-numerical-setup">
-<h2>Intrinsic Permeability - Numerical Setup<a class="headerlink" href="#intrinsic-permeability-numerical-setup" title="Permalink to this heading"></a></h2>
+<h2>Intrinsic Permeability - Numerical Setup<a class="headerlink" href="#intrinsic-permeability-numerical-setup" title="Permalink to this headline"></a></h2>
 <p>In the micromodels discrete representation are used the meshes described in the Table. At the first and last mesh points of the y and z axes are set as solid to represent the micromodel walls.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -185,14 +184,14 @@ M4 &amp; 4.57 &amp; 5468 \times 5470 \times 9 &amp; 36.7     \\ \hline
 </div>
 <p>The domain set of ” InletLayers = 0, 0, 5” and “OutletLayers = 0, 0, 5” are used to conect inlet and outlet fo the periodic domain. The discrete images *.raw (as example “M1-Micro-5646x5648x9.raw”) are available at XX.</p>
 <section id="resultados">
-<h3>Resultados<a class="headerlink" href="#resultados" title="Permalink to this heading"></a></h3>
+<h3>Resultados<a class="headerlink" href="#resultados" title="Permalink to this headline"></a></h3>
 <p>The velocity magnitude field obtained for each case can be seen in the Figure below.</p>
-<table class="docutils align-default">
+<table class="colwidths-auto docutils align-default">
 <thead>
-<tr class="row-odd"><th class="head text-center"><p><p style="font-size:21px;text-align: center">M1</p></p></th>
-<th class="head text-center"><p><p style="font-size:21px;text-align: center">M2</p></p></th>
-<th class="head text-center"><p><p style="font-size:21px;text-align: center">M3</p></p></th>
-<th class="head text-center"><p><p style="font-size:21px;text-align: center">M4</p></p></th>
+<tr class="row-odd"><th class="text-center head"><p><p style="font-size:21px;text-align: center">M1</p></p></th>
+<th class="text-center head"><p><p style="font-size:21px;text-align: center">M2</p></p></th>
+<th class="text-center head"><p><p style="font-size:21px;text-align: center">M3</p></p></th>
+<th class="text-center head"><p><p style="font-size:21px;text-align: center">M4</p></p></th>
 </tr>
 </thead>
 <tbody>
@@ -220,7 +219,7 @@ M4    &amp; 36.7      &amp; 36.4(0.2)      &amp; −0.7      &amp; 5.71(1.25)  &
 </section>
 </section>
 <section id="relative-permeability-numerical-setup">
-<h2>Relative Permeability - Numerical Setup<a class="headerlink" href="#relative-permeability-numerical-setup" title="Permalink to this heading"></a></h2>
+<h2>Relative Permeability - Numerical Setup<a class="headerlink" href="#relative-permeability-numerical-setup" title="Permalink to this headline"></a></h2>
 </section>
 </section>
 
